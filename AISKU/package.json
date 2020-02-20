@@ -49,6 +49,7 @@
         "typescript": "2.5.3"
     },
     "dependencies": {
+        "@microsoft/dynamicproto-js": "^0.5.1",
         "@microsoft/applicationinsights-analytics-js": "2.4.4",
         "@microsoft/applicationinsights-channel-js": "2.4.4",
         "@microsoft/applicationinsights-common": "2.4.4",

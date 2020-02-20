@@ -21,10 +21,10 @@ class PollingAssert {
                     Assert.ok(false, "assert didn't succeed for " + timeout + " seconds: " + assertDescription);
                     nextTestStep();
                 } else {
-                    setTimeout(polling, pollIntervalMs);
+                    TestClass.orgSetTimeout(polling, pollIntervalMs);
                 }
             }
-            setTimeout(polling, pollIntervalMs);
+            TestClass.orgSetTimeout(polling, pollIntervalMs);
         }
 
         pollingAssert[TestClass.isPollingStepFlag] = true;

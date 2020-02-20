@@ -1,6 +1,7 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import {uglify} from "rollup-plugin-uglify";
 import replace from "rollup-plugin-replace";
+import dynamicRemove from "@microsoft/dynamicproto-js/tools/rollup/node/removedynamic";
 import { es3Poly, es3Check, importCheck } from "@microsoft/applicationinsights-rollup-es3";
 
 const version = require("./package.json").version;
@@ -22,6 +23,7 @@ const browserRollupConfigFactory = (isProduction, libVersion = '2') => {
       sourcemap: true
     },
     plugins: [
+      dynamicRemove(),
       replace({
         delimiters: ["", ""],
         values: {
@@ -65,6 +67,7 @@ const nodeUmdRollupConfigFactory = (isProduction) => {
       sourcemap: true
     },
     plugins: [
+      dynamicRemove(),
       replace({
         delimiters: ["", ""],
         values: {
